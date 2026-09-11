@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">HKU Schedule</string>
+    <string name="title_activity_main">HKU Schedule</string>
+    <string name="package_name">com.xiaoq.hkuschedule2026</string>
+    <string name="custom_url_scheme">com.xiaoq.hkuschedule2026</string>
+</resources>

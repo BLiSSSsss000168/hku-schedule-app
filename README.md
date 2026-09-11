@@ -77,3 +77,20 @@ npm run sync:ios
 - `SIDELOADLY.md`
 
 流程是：GitHub macOS Runner 编译未签名 IPA，然后在 Windows 上使用 Sideloadly 和 Apple ID 重签名并安装到 iPhone/iPad。
+
+## Android APK
+
+本项目同时包含 Capacitor Android 工程，可以在 Windows 上直接构建：
+
+```powershell
+npm run sync:android
+npm run build:android
+```
+
+构建结果：
+
+```text
+artifacts/HKU-Schedule-android-debug.apk
+```
+
+调试 APK 使用 Android Debug 签名，可以直接传到 Android 手机并安装。首次安装时需要在系统设置中允许当前文件管理器“安装未知应用”。

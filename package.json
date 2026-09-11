@@ -7,7 +7,10 @@
     "dev": "node scripts/dev-server.mjs",
     "sync:ios": "cap sync ios",
     "open:ios": "cap open ios",
-    "copy:vendor": "node scripts/copy-vendor.mjs"
+    "copy:vendor": "node scripts/copy-vendor.mjs",
+    "sync:android": "cap sync android",
+    "open:android": "cap open android",
+    "build:android": "powershell -ExecutionPolicy Bypass -File scripts/build-android-apk.ps1"
   },
   "keywords": [
     "hku",
@@ -19,6 +22,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@capacitor/android": "^8.5.1",
     "@capacitor/cli": "^8.5.1",
     "@capacitor/core": "^8.5.1",
     "@capacitor/filesystem": "^8.1.3",
