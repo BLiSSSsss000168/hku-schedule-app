@@ -94,3 +94,7 @@ artifacts/HKU-Schedule-android-debug.apk
 ```
 
 调试 APK 使用 Android Debug 签名，可以直接传到 Android 手机并安装。首次安装时需要在系统设置中允许当前文件管理器“安装未知应用”。
+
+已发布的公共下载地址：
+
+`https://github.com/BLiSSSsss000168/hku-schedule-app/releases/download/android-v1.0.1/HKU-Schedule-android-debug.apk`

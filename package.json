@@ -8,9 +8,9 @@
     "sync:ios": "cap sync ios",
     "open:ios": "cap open ios",
     "copy:vendor": "node scripts/copy-vendor.mjs",
-    "sync:android": "cap sync android",
+    "sync:android": "node --require=./scripts/cap-shim.cjs ./node_modules/@capacitor/cli/bin/capacitor sync android",
     "open:android": "cap open android",
-    "build:android": "powershell -ExecutionPolicy Bypass -File scripts/build-android-apk.ps1"
+    "build:android": "npm run copy:vendor && powershell -ExecutionPolicy Bypass -File scripts/build-android-apk.ps1"
   },
   "keywords": [
     "hku",

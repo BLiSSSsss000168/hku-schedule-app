@@ -7,6 +7,7 @@ $jdkRoot = "D:\HKU Learning\Java\jdk21-extracted\jdk-21.0.12.1+1"
 $androidUserHome = "D:\HKU Learning\.android"
 $gradleUserHome = "D:\HKU Learning\.gradle"
 $artifactDir = Join-Path $projectRoot "artifacts"
+$localDownloadDir = Join-Path $projectRoot "www\downloads"
 
 if (-not (Test-Path -LiteralPath $sdkRoot)) {
     throw "Android SDK not found: $sdkRoot"
@@ -22,6 +23,18 @@ $env:ANDROID_SDK_ROOT = $sdkRoot
 $env:ANDROID_USER_HOME = $androidUserHome
 $env:GRADLE_USER_HOME = $gradleUserHome
 Remove-Item Env:ANDROID_SDK_HOME -ErrorAction SilentlyContinue
+Remove-Item -LiteralPath $localDownloadDir -Recurse -Force -ErrorAction SilentlyContinue
+
+Push-Location $projectRoot
+try {
+    & node --require=./scripts/cap-shim.cjs ./node_modules/@capacitor/cli/bin/capacitor sync android
+    if ($LASTEXITCODE -ne 0) {
+        throw "Capacitor sync failed with exit code $LASTEXITCODE"
+    }
+}
+finally {
+    Pop-Location
+}
 
 Push-Location $androidRoot
 try {

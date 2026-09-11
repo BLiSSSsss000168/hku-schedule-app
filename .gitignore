@@ -5,6 +5,7 @@ node_modules/
 work/
 build/
 artifacts/
+www/downloads/
 ios/App/App/public/
 ios/App/Pods/
 ios/App/App.xcworkspace/xcuserdata/
