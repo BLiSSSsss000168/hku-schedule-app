@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#17365d" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="HKU Schedule" />
+    <link rel="apple-touch-icon" href="icons/app-icon-192.png" />
+    <link rel="icon" href="icons/app-icon-192.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>HKU Schedule</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="topbar-title">
+          <span class="eyebrow">HKU</span>
+          <h1 id="page-title">课表</h1>
+        </div>
+        <div id="header-actions" class="header-actions"></div>
+      </header>
+
+      <main id="view" class="view" aria-live="polite"></main>
+
+      <nav class="tabbar" aria-label="主导航">
+        <button class="tab-button is-active" type="button" data-tab="schedule">
+          <i data-lucide="calendar-days" aria-hidden="true"></i>
+          <span>课表</span>
+        </button>
+        <button class="tab-button" type="button" data-tab="courses">
+          <i data-lucide="book-open" aria-hidden="true"></i>
+          <span>课程</span>
+        </button>
+        <button class="tab-button" type="button" data-tab="export">
+          <i data-lucide="file-down" aria-hidden="true"></i>
+          <span>导入导出</span>
+        </button>
+        <button class="tab-button" type="button" data-tab="reminder">
+          <i data-lucide="bell-ring" aria-hidden="true"></i>
+          <span>提醒</span>
+        </button>
+      </nav>
+    </div>
+
+    <div id="modal-root"></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <input id="html-file-picker" class="visually-hidden" type="file" accept=".html,.htm,text/html" multiple />
+
+    <script src="vendor/lucide.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

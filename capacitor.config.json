@@ -1,0 +1,21 @@
+{
+  "appId": "com.xiaoq.hkuschedule2026",
+  "appName": "HKU Schedule",
+  "webDir": "www",
+  "server": {
+    "iosScheme": "capacitor"
+  },
+  "ios": {
+    "contentInset": "automatic"
+  },
+  "plugins": {
+    "LocalNotifications": {
+      "presentationOptions": [
+        "badge",
+        "sound",
+        "banner",
+        "list"
+      ]
+    }
+  }
+}
